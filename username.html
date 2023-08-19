@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>username.html</title>
+    <script>
+        function generate() {
+            var adjectives = ["happy", "creative", "awesome", "playful", "smart", "quirky", "funny"];
+            var nouns = ["unicorn", "penguin", "gamer", "ninja", "explorer", "scientist", "developer"];
+            
+            var randomAdjective = adjectives[Math.floor(Math.random() * adjectives.length)];
+            var randomNoun = nouns[Math.floor(Math.random() * nouns.length)];
+            
+            var username = randomAdjective + "_" + randomNoun;
+            var password = Math.random().toString(36).slice(-8); // Generates a random 8-character alphanumeric password
+            
+            document.getElementById("username").value = username;
+            document.getElementById("password").value = password;
+        }
+    </script>
+</head>
+<body>
+    <h1>Random Username and Password Generator</h1>
+    <button onclick="generate()">Generate</button>
+    <br>
+    <label for="username">Username:</label>
+    <input type="text" id="username" readonly>
+    <br>
+    <label for="password">Password:</label>
+    <input type="text" id="password" readonly>
+</body>
+</html>
